@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 @Data
 public class Predio extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     private Localidade localidade;
 
 }
