@@ -1,5 +1,6 @@
 package br.com.fiap.booking.domain;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,5 +16,6 @@ public class Localidade extends BaseEntity {
     private String cidade;
     private String estado;
     private String pais;
+    @ElementCollection
     private List<String> amenidades;
 }
