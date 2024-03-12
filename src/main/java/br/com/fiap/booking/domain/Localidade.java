@@ -6,9 +6,9 @@ import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class Localidade extends BaseEntity {
     private String rua;
     private String cep;
