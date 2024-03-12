@@ -1,0 +1,10 @@
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: "booking"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "pass"
+    ports:
+      - "5432:5432"
