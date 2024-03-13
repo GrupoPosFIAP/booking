@@ -12,34 +12,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.booking.domain.Quarto;
-import br.com.fiap.booking.dto.QuartoDto;
-import br.com.fiap.booking.mapper.QuartoMapper;
-import br.com.fiap.booking.service.QuartoCrudService;
+import br.com.fiap.booking.domain.opcionais.Item;
+import br.com.fiap.booking.dto.ItemDto;
+import br.com.fiap.booking.mapper.ItemMapper;
+import br.com.fiap.booking.service.ItemCrudService;
 
 @RestController
-@RequestMapping("/quartos")
-public class QuartoCrudController
-        extends BaseCrudController<Quarto, QuartoDto> {
+@RequestMapping("/itens")
+public class ItemCrudController extends BaseCrudController<Item, ItemDto> {
 
-    public QuartoCrudController(
-            QuartoCrudService service,
-            QuartoMapper mapper) {
-        super(service, mapper);
+    public ItemCrudController(ItemCrudService crudService, ItemMapper mapper) {
+        super(crudService, mapper);
     }
 
     @PostMapping
-    public ResponseEntity<QuartoDto> create(@RequestBody QuartoDto dto) {
+    public ResponseEntity<ItemDto> create(@RequestBody ItemDto dto) {
         return super.create(dto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<QuartoDto> read(@PathVariable("id") Long id) {
+    public ResponseEntity<ItemDto> read(@PathVariable("id") Long id) {
         return super.read(id);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<QuartoDto> update(@RequestBody QuartoDto dto, @PathVariable("id") Long id) {
+    public ResponseEntity<ItemDto> update(@RequestBody ItemDto dto, @PathVariable("id") Long id) {
         return super.update(dto, id);
     }
 
@@ -49,7 +46,8 @@ public class QuartoCrudController
     }
 
     @GetMapping
-    public ResponseEntity<List<QuartoDto>> search(@PathVariable("search") String search) {
+    public ResponseEntity<List<ItemDto>> search(@PathVariable("search") String search) {
         return super.search(search);
     }
+
 }

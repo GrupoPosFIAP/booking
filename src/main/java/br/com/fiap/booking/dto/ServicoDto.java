@@ -1,7 +1,6 @@
 package br.com.fiap.booking.dto;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,13 +13,9 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class QuartoDto extends BaseDto {
+public class ServicoDto extends BaseDto {
 
-    private String tipo;
-    private Integer totalPessoas;
-    private Integer quantidadeCamas;
-    private List<String> moveis;
+    private LocalidadeDto localidade;
     private BigDecimal value;
-    private Integer quantidadeBanheiros;
-    private Integer quantidadeQuartos;
+    private Integer quantidade;
 }

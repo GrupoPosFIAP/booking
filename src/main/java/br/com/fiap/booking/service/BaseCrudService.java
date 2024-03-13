@@ -31,12 +31,12 @@ public abstract class BaseCrudService<E extends BaseEntity> {
 
     public E update(E data, Long id) {
         log.info("Atualizando dados. id: {}", id);
-        var outdated = repository
+        var toUpdate = repository
             .findById(id)
             .orElseThrow(DataNotFoundException::new);
         
-        return mapper.mapping(data, outdated);
-
+        mapper.mapping(data, toUpdate);
+        return repository.save(toUpdate);
     }
 
     public void delete(Long id) {

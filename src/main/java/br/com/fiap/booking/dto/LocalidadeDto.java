@@ -1,19 +1,20 @@
-package br.com.fiap.booking.domain;
+package br.com.fiap.booking.dto;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
-@Entity
 @Getter
 @Setter
-@AllArgsConstructor
+@SuperBuilder
 @NoArgsConstructor
-public class Localidade extends BaseEntity {
+@AllArgsConstructor
+public class LocalidadeDto extends BaseDto {
+
     private String rua;
     private String cep;
     private String cidade;

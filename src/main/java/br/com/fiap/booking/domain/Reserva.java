@@ -1,8 +1,9 @@
 package br.com.fiap.booking.domain;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,11 +14,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Localidade extends BaseEntity {
-    private String rua;
-    private String cep;
-    private String cidade;
-    private String estado;
-    private String pais;
-    private List<String> amenidades;
+public class Reserva extends BaseEntity {
+
+    @ManyToOne
+    private Quarto quarto;
+    private LocalDateTime inicioReserva;
+    private LocalDateTime fimReserva;
 }

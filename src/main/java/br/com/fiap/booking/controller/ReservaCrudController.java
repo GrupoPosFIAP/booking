@@ -12,34 +12,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.booking.domain.Quarto;
-import br.com.fiap.booking.dto.QuartoDto;
-import br.com.fiap.booking.mapper.QuartoMapper;
-import br.com.fiap.booking.service.QuartoCrudService;
+import br.com.fiap.booking.domain.Reserva;
+import br.com.fiap.booking.dto.ReservaDto;
+import br.com.fiap.booking.mapper.ReservaMapper;
+import br.com.fiap.booking.service.ReservaCrudService;
 
 @RestController
-@RequestMapping("/quartos")
-public class QuartoCrudController
-        extends BaseCrudController<Quarto, QuartoDto> {
+@RequestMapping("/reservas")
+public class ReservaCrudController
+        extends BaseCrudController<Reserva, ReservaDto> {
 
-    public QuartoCrudController(
-            QuartoCrudService service,
-            QuartoMapper mapper) {
+    public ReservaCrudController(
+            ReservaCrudService service,
+            ReservaMapper mapper) {
         super(service, mapper);
     }
 
     @PostMapping
-    public ResponseEntity<QuartoDto> create(@RequestBody QuartoDto dto) {
+    public ResponseEntity<ReservaDto> create(@RequestBody ReservaDto dto) {
         return super.create(dto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<QuartoDto> read(@PathVariable("id") Long id) {
+    public ResponseEntity<ReservaDto> read(@PathVariable("id") Long id) {
         return super.read(id);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<QuartoDto> update(@RequestBody QuartoDto dto, @PathVariable("id") Long id) {
+    public ResponseEntity<ReservaDto> update(@RequestBody ReservaDto dto, @PathVariable("id") Long id) {
         return super.update(dto, id);
     }
 
@@ -49,7 +49,7 @@ public class QuartoCrudController
     }
 
     @GetMapping
-    public ResponseEntity<List<QuartoDto>> search(@PathVariable("search") String search) {
+    public ResponseEntity<List<ReservaDto>> search(@PathVariable("search") String search) {
         return super.search(search);
     }
 }

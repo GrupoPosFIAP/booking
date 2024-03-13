@@ -5,17 +5,22 @@ import java.math.BigDecimal;
 import br.com.fiap.booking.domain.BaseEntity;
 import br.com.fiap.booking.domain.Localidade;
 import br.com.fiap.booking.domain.Produto;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
 @Entity
-@EqualsAndHashCode(callSuper = true)
-public class Itens extends BaseEntity implements Produto {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Servico extends BaseEntity implements Produto {
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     private Localidade localidade;
     private BigDecimal value;
     private Integer quantidade;

@@ -12,34 +12,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.booking.domain.Quarto;
-import br.com.fiap.booking.dto.QuartoDto;
-import br.com.fiap.booking.mapper.QuartoMapper;
-import br.com.fiap.booking.service.QuartoCrudService;
+import br.com.fiap.booking.domain.Localidade;
+import br.com.fiap.booking.dto.LocalidadeDto;
+import br.com.fiap.booking.mapper.LocalidadeMapper;
+import br.com.fiap.booking.service.LocalidadeCrudService;
 
 @RestController
-@RequestMapping("/quartos")
-public class QuartoCrudController
-        extends BaseCrudController<Quarto, QuartoDto> {
+@RequestMapping("/localidades")
+public class LocalidadeCrudController extends BaseCrudController<Localidade, LocalidadeDto> {
 
-    public QuartoCrudController(
-            QuartoCrudService service,
-            QuartoMapper mapper) {
-        super(service, mapper);
+    public LocalidadeCrudController(LocalidadeCrudService crudService, LocalidadeMapper mapper) {
+        super(crudService, mapper);
     }
 
     @PostMapping
-    public ResponseEntity<QuartoDto> create(@RequestBody QuartoDto dto) {
+    public ResponseEntity<LocalidadeDto> create(@RequestBody LocalidadeDto dto) {
         return super.create(dto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<QuartoDto> read(@PathVariable("id") Long id) {
+    public ResponseEntity<LocalidadeDto> read(@PathVariable("id") Long id) {
         return super.read(id);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<QuartoDto> update(@RequestBody QuartoDto dto, @PathVariable("id") Long id) {
+    public ResponseEntity<LocalidadeDto> update(@RequestBody LocalidadeDto dto, @PathVariable("id") Long id) {
         return super.update(dto, id);
     }
 
@@ -49,7 +46,8 @@ public class QuartoCrudController
     }
 
     @GetMapping
-    public ResponseEntity<List<QuartoDto>> search(@PathVariable("search") String search) {
+    public ResponseEntity<List<LocalidadeDto>> search(@PathVariable("search") String search) {
         return super.search(search);
     }
+
 }

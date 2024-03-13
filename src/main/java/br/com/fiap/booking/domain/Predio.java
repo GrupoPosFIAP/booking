@@ -1,16 +1,21 @@
 package br.com.fiap.booking.domain;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@EqualsAndHashCode(callSuper = true)
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Predio extends BaseEntity {
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     private Localidade localidade;
 
 }

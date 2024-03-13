@@ -3,17 +3,23 @@ package br.com.fiap.booking.domain;
 import java.math.BigDecimal;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@EqualsAndHashCode(callSuper = true)
+
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Quarto extends BaseEntity implements Produto {
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     private Predio predio;
     private String tipo;
     private Integer totalPessoas;
