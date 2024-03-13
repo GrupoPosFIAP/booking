@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.booking.controller.specifications.QuartoSpecification;
 import br.com.fiap.booking.domain.Quarto;
 import br.com.fiap.booking.dto.QuartoDto;
 import br.com.fiap.booking.mapper.QuartoMapper;
@@ -49,7 +50,7 @@ public class QuartoCrudController
     }
 
     @GetMapping
-    public ResponseEntity<List<QuartoDto>> search(@PathVariable("search") String search) {
-        return super.search(search);
+    public ResponseEntity<List<QuartoDto>> search(QuartoSpecification specs) {
+        return super.search(specs);
     }
 }

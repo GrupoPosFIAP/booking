@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.booking.controller.specifications.ItemSpecification;
 import br.com.fiap.booking.domain.opcionais.Item;
 import br.com.fiap.booking.dto.ItemDto;
 import br.com.fiap.booking.mapper.ItemMapper;
@@ -46,8 +47,8 @@ public class ItemCrudController extends BaseCrudController<Item, ItemDto> {
     }
 
     @GetMapping
-    public ResponseEntity<List<ItemDto>> search(@PathVariable("search") String search) {
-        return super.search(search);
+    public ResponseEntity<List<ItemDto>> search(ItemSpecification specs) {
+        return super.search(specs);
     }
 
 }

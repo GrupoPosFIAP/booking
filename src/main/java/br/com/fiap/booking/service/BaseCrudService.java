@@ -1,7 +1,8 @@
 package br.com.fiap.booking.service;
 
-import java.util.Collections;
 import java.util.List;
+
+import org.springframework.data.jpa.domain.Specification;
 
 import br.com.fiap.booking.domain.BaseEntity;
 import br.com.fiap.booking.exception.DataNotFoundException;
@@ -45,7 +46,8 @@ public abstract class BaseCrudService<E extends BaseEntity> {
         log.info("Dado deletado com sucesso: id: {}", id);
     }
 
-    public List<E> search(String... params) {
-        return Collections.emptyList();
+    public List<E> search(Specification<E> spec) {
+        log.info("Pesquisando dados");
+        return repository.findAll(spec);
     }
 }

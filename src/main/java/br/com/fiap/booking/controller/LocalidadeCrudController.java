@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.booking.controller.specifications.LocalidadeSpecification;
 import br.com.fiap.booking.domain.Localidade;
 import br.com.fiap.booking.dto.LocalidadeDto;
 import br.com.fiap.booking.mapper.LocalidadeMapper;
@@ -46,8 +47,8 @@ public class LocalidadeCrudController extends BaseCrudController<Localidade, Loc
     }
 
     @GetMapping
-    public ResponseEntity<List<LocalidadeDto>> search(@PathVariable("search") String search) {
-        return super.search(search);
+    public ResponseEntity<List<LocalidadeDto>> search(LocalidadeSpecification specs) {
+        return super.search(specs);
     }
 
 }

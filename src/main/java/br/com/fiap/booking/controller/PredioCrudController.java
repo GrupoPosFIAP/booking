@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.booking.controller.specifications.PredioSpecification;
 import br.com.fiap.booking.domain.Predio;
 import br.com.fiap.booking.dto.PredioDto;
 import br.com.fiap.booking.mapper.PredioMapper;
@@ -46,8 +47,8 @@ public class PredioCrudController extends BaseCrudController<Predio, PredioDto> 
     }
 
     @GetMapping
-    public ResponseEntity<List<PredioDto>> search(@PathVariable("search") String search) {
-        return super.search(search);
+    public ResponseEntity<List<PredioDto>> search(PredioSpecification specs) {
+        return super.search(specs);
     }
 
 }

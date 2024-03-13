@@ -1,5 +1,6 @@
 package br.com.fiap.booking.controller;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
@@ -12,6 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -22,6 +24,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 
+import br.com.fiap.booking.controller.specifications.ServicoSpecification;
 import br.com.fiap.booking.domain.opcionais.Servico;
 import br.com.fiap.booking.mapper.ServicoMapper;
 import br.com.fiap.booking.repository.ServicoRepository;
@@ -114,14 +117,23 @@ public class ServicoCrudControllerTest extends BaseCrudControllerTest {
     @Test
     void testSearch() throws Exception {
 
+        var servicos = List.of(
+            Servico.builder().nome("Massagem Corporal").build(),
+            Servico.builder().nome("Massagem muito doida").build(),
+            Servico.builder().nome("Massagem Você sabe bem né!").build()
+        );
+
+        doReturn(servicos)
+            .when(repository).findAll(any(ServicoSpecification.class));
+
         mockMvc
             .perform(
                 get("/servicos")
-                .param("search", "search")
+                .param("nome", "massagem")
                     .contentType(MediaType.APPLICATION_JSON)
                     .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$").isArray());
+            .andExpect(jsonPath("$", hasSize(3)));
 
     }
 }

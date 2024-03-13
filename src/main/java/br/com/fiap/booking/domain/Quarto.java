@@ -21,6 +21,7 @@ public class Quarto extends BaseEntity implements Produto {
 
     @ManyToOne(cascade = CascadeType.MERGE)
     private Predio predio;
+    private Long numero;
     private String tipo;
     private Integer totalPessoas;
     private Integer quantidadeCamas;

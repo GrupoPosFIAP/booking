@@ -4,6 +4,7 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.ResponseEntity;
 
 import br.com.fiap.booking.domain.BaseEntity;
@@ -39,9 +40,9 @@ public abstract class BaseCrudController<E extends BaseEntity, DTO> {
         return ResponseEntity.ok().build();
     }
 
-    public ResponseEntity<List<DTO>> search(String... params) {
+    public ResponseEntity<List<DTO>> search(Specification<E> spec) {
         var response = crudService
-            .search(params)
+            .search(spec)
             .stream()
             .map(mapper::toDto)
             .collect(toList());

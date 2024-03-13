@@ -16,6 +16,8 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 public class QuartoDto extends BaseDto {
 
+    private PredioDto predio;
+    private Long numero;
     private String tipo;
     private Integer totalPessoas;
     private Integer quantidadeCamas;

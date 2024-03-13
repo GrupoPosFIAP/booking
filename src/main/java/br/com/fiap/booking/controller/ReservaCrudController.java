@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.booking.controller.specifications.ReservaSpecification;
 import br.com.fiap.booking.domain.Reserva;
 import br.com.fiap.booking.dto.ReservaDto;
 import br.com.fiap.booking.mapper.ReservaMapper;
@@ -49,7 +50,7 @@ public class ReservaCrudController
     }
 
     @GetMapping
-    public ResponseEntity<List<ReservaDto>> search(@PathVariable("search") String search) {
-        return super.search(search);
+    public ResponseEntity<List<ReservaDto>> search(ReservaSpecification specs) {
+        return super.search(specs);
     }
 }
