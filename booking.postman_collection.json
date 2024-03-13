@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "5a581b3f-560a-44cd-bc45-5739b77a6092",
+		"name": "booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2952380"
+	},
+	"item": [
+		{
+			"name": "Quartos",
+			"item": [
+				{
+					"name": "POST - Quarto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"STANDARD CASAL\",\r\n    \"totalPessoas\": 2,\r\n    \"quantidadeCamas\": 1,\r\n    \r\n    \"value\": 500.00,\r\n    \"quantidadeBanheiros\": 1,\r\n    \"quantidadeQuartos\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/booking-service/quartos",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"booking-service",
+								"quartos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Quarto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking-service/quartos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking-service",
+								"quartos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Quarto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"STANDARD CASAL\",\r\n    \"totalPessoas\": 3,\r\n    \"quantidadeCamas\": 2,\r\n    \"moveis\": [\r\n        \"cama King size\",\r\n        \"mesa de jantar 4 lugares\",\r\n        \"sofá 2 lugares\",\r\n        \"sofá 4 lugares\"\r\n    ],\r\n    \"value\": 500.00,\r\n    \"quantidadeBanheiros\": 1,\r\n    \"quantidadeQuartos\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/booking-service/quartos/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"booking-service",
+								"quartos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Quarto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/booking-service/quartos/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"booking-service",
+								"quartos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Search Quartos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/booking-service/quartos?search=quantidadePessoas:2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"booking-service",
+								"quartos"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "quantidadePessoas:2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localidades",
+			"item": [
+				{
+					"name": "POST - Localidades",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"nome\": \"{{#name}}\",\n    \"descricao\": \"{{#string}}\",\n    \"rua\" : \"{{#string}}\",\n    \"cep\" : \"00000000\",\n    \"cidade\" : \"São Paulo\",\n    \"estado\" : \"SP\",\n    \"pais\" : \"Brasil\",\n    \"amenidades\" : [\n            \"Café da manhã\",\n            \"Almoço\",\n            \"Janta\"\n        ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/booking-service/localidades",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"booking-service",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Localidades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking-service/localidades/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking-service",
+								"localidades",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Localidades",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Flores\",\r\n    \"descricao\": \"Corwin aa47ff122bd8\",\r\n    \"rua\": \"Casper d0a57158be9f\",\r\n    \"cep\": \"00000000\",\r\n    \"cidade\": \"São Paulo\",\r\n    \"estado\": \"SP\",\r\n    \"pais\": \"Brasil\",\r\n    \"amenidades\": [\r\n        \"Janta\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/booking-service/localidades/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking-service",
+								"localidades",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Localidades",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking-service/localidades/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking-service",
+								"localidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Predios",
+			"item": [
+				{
+					"name": "POST - Predios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Torre 2\",\n  \"descricao\": \"Torre 2\",\n  \"localidade\": {\n    \"id\": 5\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/booking-service/predios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking-service",
+								"predios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Predios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking-service/predios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking-service",
+								"predios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servicos",
+			"item": [
+				{
+					"name": "POST - Servicos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"test_value\",\r\n    \"descricao\": \"test_value\",\r\n    \"localidade\": {\r\n        \"id\": 2\r\n    },\r\n    \"value\": \"15.00\",\r\n    \"quantidade\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/booking-service/servicos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking-service",
+								"servicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SEARCH - Servicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking-service/servicos?search=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking-service",
+								"servicos"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swagger",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/swagger-ui.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swagger-ui.html"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
