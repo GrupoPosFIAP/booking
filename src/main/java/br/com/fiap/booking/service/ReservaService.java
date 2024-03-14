@@ -28,6 +28,9 @@ public class ReservaService {
     @Autowired
     private ReservaCustomRepository reservaCustomRepository;
 
+    @Autowired
+    private EmailService emailService;
+
     public Reserva cadastrarReserva(ReservaDto reservaDto) {
         Quarto quarto = this.quartoRepository.findById(reservaDto.getIdQuarto())
                 .orElseThrow(() -> new EntityNotFoundException("Quarto não encontrado."));
@@ -40,7 +43,11 @@ public class ReservaService {
         if(reservaDto.getTotalPessoas() > quarto.getTotalPessoas()) {
             throw new RuntimeException("Quantidade de pessoas maior que a capacidade do quarto.");
         }
-        return this.reservaRepository.save(reservaDto.toEntity(quarto, Collections.emptyList(), Collections.emptyList()));
+        Reserva reserva = this.reservaRepository.save(reservaDto.toEntity(quarto, Collections.emptyList(), Collections.emptyList()));
+
+        emailService.sendMail(reserva);
+
+        return reserva;
     }
 
     public Object atualizarReserva(Long id, ReservaDto reservaDto) {
