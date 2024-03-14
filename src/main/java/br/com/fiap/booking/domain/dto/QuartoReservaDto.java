@@ -10,7 +10,6 @@ import java.util.List;
 public class QuartoReservaDto {
 
     private String idQuarto;
-    private Predio idPredio;
     private String nome;
     private String descricao;
     private String tipo;
@@ -21,5 +20,11 @@ public class QuartoReservaDto {
     private Integer quantidadeBanheiros;
     private Integer quantidadeQuartos;
     private Long quartosDisponiveis;
+    private Long quantidadeReservas;
+
+    public Long getQuartosDisponiveis() {
+       return this.quantidadeQuartos - this.quantidadeReservas;
+    }
 
 }
+

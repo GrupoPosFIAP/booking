@@ -28,14 +28,16 @@ public class Reserva {
     private LocalDate dataInicial;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataFinal;
+    private Long totalPessoas;
 
-    public Reserva(Quarto quarto, List<Itens> itens, List<Servicos> servicos, Long idCliente, LocalDate dataInicial, LocalDate dataFinal) {
+    public Reserva(Quarto quarto, List<Itens> itens, List<Servicos> servicos, Long idCliente, LocalDate dataInicial, LocalDate dataFinal, Long totalPessoas) {
         this.quarto = quarto;
         this.itens = itens;
         this.servicos = servicos;
         this.idCliente = idCliente;
         this.dataInicial = dataInicial;
         this.dataFinal = dataFinal;
+        this.totalPessoas = totalPessoas;
     }
 
     public Reserva() {

@@ -22,10 +22,11 @@ public class ReservaDto {
     private LocalDate dataInicial;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataFinal;
+    private Long totalPessoas;
 
 
     public Reserva toEntity(Quarto quarto, List<Itens> itens, List<Servicos> servicos) {
-        return new Reserva(quarto, itens, servicos, this.idCliente, this.dataInicial, this.dataFinal);
+        return new Reserva(quarto, itens, servicos, this.idCliente, this.dataInicial, this.dataFinal, this.totalPessoas);
     }
 
 }
