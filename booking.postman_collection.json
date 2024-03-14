@@ -1,372 +1,2194 @@
 {
 	"info": {
-		"_postman_id": "5a581b3f-560a-44cd-bc45-5739b77a6092",
+		"_postman_id": "6fdbb2d3-5ace-4164-8d29-13e45e2b65d5",
 		"name": "booking",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "2952380"
 	},
 	"item": [
 		{
-			"name": "Quartos",
+			"name": "servicos",
 			"item": [
 				{
-					"name": "POST - Quarto",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"tipo\": \"STANDARD CASAL\",\r\n    \"totalPessoas\": 2,\r\n    \"quantidadeCamas\": 1,\r\n    \r\n    \"value\": 500.00,\r\n    \"quantidadeBanheiros\": 1,\r\n    \"quantidadeQuartos\": 20\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{localhost}}/booking-service/quartos",
-							"host": [
-								"{{localhost}}"
-							],
-							"path": [
-								"booking-service",
-								"quartos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET - Quarto",
+					"name": "search",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/booking-service/quartos/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"booking-service",
-								"quartos",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "PUT - Quarto",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"tipo\": \"STANDARD CASAL\",\r\n    \"totalPessoas\": 3,\r\n    \"quantidadeCamas\": 2,\r\n    \"moveis\": [\r\n        \"cama King size\",\r\n        \"mesa de jantar 4 lugares\",\r\n        \"sofá 2 lugares\",\r\n        \"sofá 4 lugares\"\r\n    ],\r\n    \"value\": 500.00,\r\n    \"quantidadeBanheiros\": 1,\r\n    \"quantidadeQuartos\": 20\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
 							}
-						},
+						],
 						"url": {
-							"raw": "{{localhost}}/booking-service/quartos/1",
+							"raw": "{{baseUrl}}/servicos",
 							"host": [
-								"{{localhost}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"booking-service",
-								"quartos",
-								"1"
+								"servicos"
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "DELETE - Quarto",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{localhost}}/booking-service/quartos/1",
-							"host": [
-								"{{localhost}}"
-							],
-							"path": [
-								"booking-service",
-								"quartos",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET - Search Quartos",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{localhost}}/booking-service/quartos?search=quantidadePessoas:2",
-							"host": [
-								"{{localhost}}"
-							],
-							"path": [
-								"booking-service",
-								"quartos"
-							],
-							"query": [
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/servicos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"servicos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
 								{
-									"key": "search",
-									"value": "quantidadePessoas:2"
+									"key": "Content-Type",
+									"value": "*/*"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"value\": \"<number>\",\n    \"quantidade\": \"<integer>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"value\": \"<number>\",\n    \"quantidade\": \"<integer>\"\n  }\n]"
 						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Localidades",
-			"item": [
+					]
+				},
 				{
-					"name": "POST - Localidades",
+					"name": "create",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \n    \"nome\": \"{{#name}}\",\n    \"descricao\": \"{{#string}}\",\n    \"rua\" : \"{{#string}}\",\n    \"cep\" : \"00000000\",\n    \"cidade\" : \"São Paulo\",\n    \"estado\" : \"SP\",\n    \"pais\" : \"Brasil\",\n    \"amenidades\" : [\n            \"Café da manhã\",\n            \"Almoço\",\n            \"Janta\"\n        ]\n}",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremSentence}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\",\n    \"nome\": \"{{$randomUserName}}\",\n    \"descricao\": \"{{$randomUserName}}\",\n    \"rua\": \"{{$randomUserName}}\",\n    \"cep\": \"{{$randomZipCode}}\",\n    \"cidade\": \"{{$randomCity}}\",\n    \"estado\": \"{{$randomUserName}}\",\n    \"pais\": \"{{$randomCountry}}\",\n    \"amenidades\": [\n      \"{{$randomLoremSentence}}\",\n      \"{{$randomLoremSentence}}\"\n    ]\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
 						"url": {
-							"raw": "{{localhost}}/booking-service/localidades",
+							"raw": "{{baseUrl}}/servicos",
 							"host": [
-								"{{localhost}}"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"booking-service",
-								"localidades"
+								"servicos"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/servicos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"servicos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}"
+						}
+					]
 				},
 				{
-					"name": "GET - Localidades",
+					"name": "read",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/booking-service/localidades/2",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/servicos/:id",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8080",
 							"path": [
-								"booking-service",
-								"localidades",
-								"2"
+								"servicos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "(Required) "
+								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/servicos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"servicos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}"
+						}
+					]
 				},
 				{
-					"name": "PUT - Localidades",
+					"name": "update",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Flores\",\r\n    \"descricao\": \"Corwin aa47ff122bd8\",\r\n    \"rua\": \"Casper d0a57158be9f\",\r\n    \"cep\": \"00000000\",\r\n    \"cidade\": \"São Paulo\",\r\n    \"estado\": \"SP\",\r\n    \"pais\": \"Brasil\",\r\n    \"amenidades\": [\r\n        \"Janta\"\r\n    ]\r\n}",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremSentence}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\",\n    \"nome\": \"{{$randomUserName}}\",\n    \"descricao\": \"{{$randomUserName}}\",\n    \"rua\": \"{{$randomUserName}}\",\n    \"cep\": \"{{$randomZipCode}}\",\n    \"cidade\": \"{{$randomCityName}}\",\n    \"estado\": \"{{$randomUserName}}\",\n    \"pais\": \"{{$randomCountry}}\",\n    \"amenidades\": [\n      \"{{$randomLoremSentence}}\",\n      \"{{$randomLoremSentence}}\"\n    ]\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/booking-service/localidades/2",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/servicos/:id",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8080",
 							"path": [
-								"booking-service",
-								"localidades",
-								"2"
+								"servicos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "(Required) "
+								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/servicos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"servicos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}"
+						}
+					]
 				},
 				{
-					"name": "DELETE - Localidades",
+					"name": "delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/booking-service/localidades/1",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/servicos/:id",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8080",
 							"path": [
-								"booking-service",
-								"localidades",
-								"1"
+								"servicos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<long>",
+									"description": "(Required) "
+								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/servicos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"servicos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
 				}
 			]
 		},
 		{
-			"name": "Predios",
+			"name": "reservas",
 			"item": [
 				{
-					"name": "POST - Predios",
+					"name": "search 1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/reservas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"quarto\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"predio\": {\n        \"id\": \"<long>\",\n        \"nome\": \"<string>\",\n        \"descricao\": \"<string>\",\n        \"localidade\": {\n          \"id\": \"<long>\",\n          \"nome\": \"<string>\",\n          \"descricao\": \"<string>\",\n          \"rua\": \"<string>\",\n          \"cep\": \"<string>\",\n          \"cidade\": \"<string>\",\n          \"estado\": \"<string>\",\n          \"pais\": \"<string>\",\n          \"amenidades\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      },\n      \"numero\": \"<long>\",\n      \"tipo\": \"<string>\",\n      \"totalPessoas\": \"<integer>\",\n      \"quantidadeCamas\": \"<integer>\",\n      \"moveis\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"value\": \"<number>\",\n      \"quantidadeBanheiros\": \"<integer>\",\n      \"quantidadeQuartos\": \"<integer>\"\n    },\n    \"inicioReserva\": \"<dateTime>\",\n    \"fimReserva\": \"<dateTime>\"\n  },\n  {\n    \"quarto\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"predio\": {\n        \"id\": \"<long>\",\n        \"nome\": \"<string>\",\n        \"descricao\": \"<string>\",\n        \"localidade\": {\n          \"id\": \"<long>\",\n          \"nome\": \"<string>\",\n          \"descricao\": \"<string>\",\n          \"rua\": \"<string>\",\n          \"cep\": \"<string>\",\n          \"cidade\": \"<string>\",\n          \"estado\": \"<string>\",\n          \"pais\": \"<string>\",\n          \"amenidades\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      },\n      \"numero\": \"<long>\",\n      \"tipo\": \"<string>\",\n      \"totalPessoas\": \"<integer>\",\n      \"quantidadeCamas\": \"<integer>\",\n      \"moveis\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"value\": \"<number>\",\n      \"quantidadeBanheiros\": \"<integer>\",\n      \"quantidadeQuartos\": \"<integer>\"\n    },\n    \"inicioReserva\": \"<dateTime>\",\n    \"fimReserva\": \"<dateTime>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create 1",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nome\": \"Torre 2\",\n  \"descricao\": \"Torre 2\",\n  \"localidade\": {\n    \"id\": 5\n  }\n}",
+							"raw": "{\n  \"quarto\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"inicioReserva\": \"2024-03-13\",\n  \"fimReserva\": \"2024-03-20\"\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/booking-service/predios",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/reservas",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8080",
 							"path": [
-								"booking-service",
+								"reservas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"quarto\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"predio\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"localidade\": {\n        \"id\": \"<long>\",\n        \"nome\": \"<string>\",\n        \"descricao\": \"<string>\",\n        \"rua\": \"<string>\",\n        \"cep\": \"<string>\",\n        \"cidade\": \"<string>\",\n        \"estado\": \"<string>\",\n        \"pais\": \"<string>\",\n        \"amenidades\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    \"numero\": \"<long>\",\n    \"tipo\": \"<string>\",\n    \"totalPessoas\": \"<integer>\",\n    \"quantidadeCamas\": \"<integer>\",\n    \"moveis\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<number>\",\n    \"quantidadeBanheiros\": \"<integer>\",\n    \"quantidadeQuartos\": \"<integer>\"\n  },\n  \"inicioReserva\": \"<dateTime>\",\n  \"fimReserva\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reservas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"quarto\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"predio\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"localidade\": {\n        \"id\": \"<long>\",\n        \"nome\": \"<string>\",\n        \"descricao\": \"<string>\",\n        \"rua\": \"<string>\",\n        \"cep\": \"<string>\",\n        \"cidade\": \"<string>\",\n        \"estado\": \"<string>\",\n        \"pais\": \"<string>\",\n        \"amenidades\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    \"numero\": \"<long>\",\n    \"tipo\": \"<string>\",\n    \"totalPessoas\": \"<integer>\",\n    \"quantidadeCamas\": \"<integer>\",\n    \"moveis\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<number>\",\n    \"quantidadeBanheiros\": \"<integer>\",\n    \"quantidadeQuartos\": \"<integer>\"\n  },\n  \"inicioReserva\": \"<dateTime>\",\n  \"fimReserva\": \"<dateTime>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "read 1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<long>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"quarto\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"predio\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"localidade\": {\n        \"id\": \"<long>\",\n        \"nome\": \"<string>\",\n        \"descricao\": \"<string>\",\n        \"rua\": \"<string>\",\n        \"cep\": \"<string>\",\n        \"cidade\": \"<string>\",\n        \"estado\": \"<string>\",\n        \"pais\": \"<string>\",\n        \"amenidades\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    \"numero\": \"<long>\",\n    \"tipo\": \"<string>\",\n    \"totalPessoas\": \"<integer>\",\n    \"quantidadeCamas\": \"<integer>\",\n    \"moveis\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<number>\",\n    \"quantidadeBanheiros\": \"<integer>\",\n    \"quantidadeQuartos\": \"<integer>\"\n  },\n  \"inicioReserva\": \"<dateTime>\",\n  \"fimReserva\": \"<dateTime>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update 1",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"quarto\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"inicioReserva\": \"2024-03-13\",\n  \"fimReserva\": \"2024-03-20\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"quarto\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"predio\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"localidade\": {\n        \"id\": \"<long>\",\n        \"nome\": \"<string>\",\n        \"descricao\": \"<string>\",\n        \"rua\": \"<string>\",\n        \"cep\": \"<string>\",\n        \"cidade\": \"<string>\",\n        \"estado\": \"<string>\",\n        \"pais\": \"<string>\",\n        \"amenidades\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    \"numero\": \"<long>\",\n    \"tipo\": \"<string>\",\n    \"totalPessoas\": \"<integer>\",\n    \"quantidadeCamas\": \"<integer>\",\n    \"moveis\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<number>\",\n    \"quantidadeBanheiros\": \"<integer>\",\n    \"quantidadeQuartos\": \"<integer>\"\n  },\n  \"inicioReserva\": \"<dateTime>\",\n  \"fimReserva\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"quarto\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"predio\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"localidade\": {\n        \"id\": \"<long>\",\n        \"nome\": \"<string>\",\n        \"descricao\": \"<string>\",\n        \"rua\": \"<string>\",\n        \"cep\": \"<string>\",\n        \"cidade\": \"<string>\",\n        \"estado\": \"<string>\",\n        \"pais\": \"<string>\",\n        \"amenidades\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    \"numero\": \"<long>\",\n    \"tipo\": \"<string>\",\n    \"totalPessoas\": \"<integer>\",\n    \"quantidadeCamas\": \"<integer>\",\n    \"moveis\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<number>\",\n    \"quantidadeBanheiros\": \"<integer>\",\n    \"quantidadeQuartos\": \"<integer>\"\n  },\n  \"inicioReserva\": \"<dateTime>\",\n  \"fimReserva\": \"<dateTime>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete 1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reservas/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "<long>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "quartos",
+			"item": [
+				{
+					"name": "search 2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/quartos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quartos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/quartos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"predio\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"localidade\": {\n        \"id\": \"<long>\",\n        \"nome\": \"<string>\",\n        \"descricao\": \"<string>\",\n        \"rua\": \"<string>\",\n        \"cep\": \"<string>\",\n        \"cidade\": \"<string>\",\n        \"estado\": \"<string>\",\n        \"pais\": \"<string>\",\n        \"amenidades\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    \"numero\": \"<long>\",\n    \"tipo\": \"<string>\",\n    \"totalPessoas\": \"<integer>\",\n    \"quantidadeCamas\": \"<integer>\",\n    \"moveis\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<number>\",\n    \"quantidadeBanheiros\": \"<integer>\",\n    \"quantidadeQuartos\": \"<integer>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"predio\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"localidade\": {\n        \"id\": \"<long>\",\n        \"nome\": \"<string>\",\n        \"descricao\": \"<string>\",\n        \"rua\": \"<string>\",\n        \"cep\": \"<string>\",\n        \"cidade\": \"<string>\",\n        \"estado\": \"<string>\",\n        \"pais\": \"<string>\",\n        \"amenidades\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    \"numero\": \"<long>\",\n    \"tipo\": \"<string>\",\n    \"totalPessoas\": \"<integer>\",\n    \"quantidadeCamas\": \"<integer>\",\n    \"moveis\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"value\": \"<number>\",\n    \"quantidadeBanheiros\": \"<integer>\",\n    \"quantidadeQuartos\": \"<integer>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"predio\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"numero\": \"{{$randomInt}}\",\n  \"tipo\": \"{{$randomLorem}}\",\n  \"totalPessoas\": \"{{$randomInt}}\",\n  \"quantidadeCamas\": \"{{$randomInt}}\",\n  \"moveis\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ],\n  \"value\": \"<number>\",\n  \"quantidadeBanheiros\": \"{{$randomInt}}\",\n  \"quantidadeQuartos\": \"{{$randomInt}}\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/quartos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quartos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"predio\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"numero\": \"<long>\",\n  \"tipo\": \"<string>\",\n  \"totalPessoas\": \"<integer>\",\n  \"quantidadeCamas\": \"<integer>\",\n  \"moveis\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"value\": \"<number>\",\n  \"quantidadeBanheiros\": \"<integer>\",\n  \"quantidadeQuartos\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/quartos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"predio\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"numero\": \"<long>\",\n  \"tipo\": \"<string>\",\n  \"totalPessoas\": \"<integer>\",\n  \"quantidadeCamas\": \"<integer>\",\n  \"moveis\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"value\": \"<number>\",\n  \"quantidadeBanheiros\": \"<integer>\",\n  \"quantidadeQuartos\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "read 2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/quartos/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quartos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/quartos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"predio\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"numero\": \"<long>\",\n  \"tipo\": \"<string>\",\n  \"totalPessoas\": \"<integer>\",\n  \"quantidadeCamas\": \"<integer>\",\n  \"moveis\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"value\": \"<number>\",\n  \"quantidadeBanheiros\": \"<integer>\",\n  \"quantidadeQuartos\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update 2",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"predio\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"numero\": \"{{$randomInt}}\",\n  \"tipo\": \"{{$randomLorem}}\",\n  \"totalPessoas\": \"{{$randomInt}}\",\n  \"quantidadeCamas\": \"{{$randomInt}}\",\n  \"moveis\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ],\n  \"value\": \"<number>\",\n  \"quantidadeBanheiros\": \"{{$randomInt}}\",\n  \"quantidadeQuartos\": \"{{$randomInt}}\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/quartos/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quartos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"predio\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"numero\": \"<long>\",\n  \"tipo\": \"<string>\",\n  \"totalPessoas\": \"<integer>\",\n  \"quantidadeCamas\": \"<integer>\",\n  \"moveis\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"value\": \"<number>\",\n  \"quantidadeBanheiros\": \"<integer>\",\n  \"quantidadeQuartos\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/quartos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"predio\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  \"numero\": \"<long>\",\n  \"tipo\": \"<string>\",\n  \"totalPessoas\": \"<integer>\",\n  \"quantidadeCamas\": \"<integer>\",\n  \"moveis\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"value\": \"<number>\",\n  \"quantidadeBanheiros\": \"<integer>\",\n  \"quantidadeQuartos\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete 2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/quartos/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quartos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/quartos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "predios",
+			"item": [
+				{
+					"name": "search 3",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/predios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
 								"predios"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/predios",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"predios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n]"
+						}
+					]
 				},
 				{
-					"name": "GET - Predios",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/booking-service/predios/3",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"booking-service",
-								"predios",
-								"3"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Servicos",
-			"item": [
-				{
-					"name": "POST - Servicos",
+					"name": "create 3",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"test_value\",\r\n    \"descricao\": \"test_value\",\r\n    \"localidade\": {\r\n        \"id\": 2\r\n    },\r\n    \"value\": \"15.00\",\r\n    \"quantidade\": 0\r\n}",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\"\n  }\n}",
 							"options": {
 								"raw": {
+									"headerFamily": "json",
 									"language": "json"
 								}
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/booking-service/servicos",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/predios",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8080",
 							"path": [
-								"booking-service",
-								"servicos"
+								"predios"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/predios",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"predios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}"
+						}
+					]
 				},
 				{
-					"name": "SEARCH - Servicos",
+					"name": "read 3",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/booking-service/servicos?search=",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/predios/:id",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8080",
 							"path": [
-								"booking-service",
-								"servicos"
+								"predios",
+								":id"
 							],
-							"query": [
+							"variable": [
 								{
-									"key": "search",
-									"value": ""
+									"key": "id",
+									"value": "1",
+									"description": "(Required) "
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/predios/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"predios",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "update 3",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/predios/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"predios",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/predios/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"predios",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete 3",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/predios/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"predios",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/predios/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"predios",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
 				}
 			]
 		},
 		{
-			"name": "Swagger",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/swagger-ui.html",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"swagger-ui.html"
+			"name": "localidades",
+			"item": [
+				{
+					"name": "search 4",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/localidades",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"localidades"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/localidades",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"localidades"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create 4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomLorem}}\",\n  \"descricao\": \"{{$randomLorem}}\",\n  \"rua\": \"{{$randomLorem}}\",\n  \"cep\": \"00000000\",\n  \"cidade\": \"{{$randomCity}}\",\n  \"estado\": \"São Paulo\",\n  \"pais\": \"{{$randomCountry}}\",\n  \"amenidades\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/localidades",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"localidades"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"rua\": \"<string>\",\n  \"cep\": \"<string>\",\n  \"cidade\": \"<string>\",\n  \"estado\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"amenidades\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/localidades",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"localidades"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"rua\": \"<string>\",\n  \"cep\": \"<string>\",\n  \"cidade\": \"<string>\",\n  \"estado\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"amenidades\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "read 4",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/localidades/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"localidades",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/localidades/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"localidades",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"rua\": \"<string>\",\n  \"cep\": \"<string>\",\n  \"cidade\": \"<string>\",\n  \"estado\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"amenidades\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update 4",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomLorem}}\",\n  \"descricao\": \"{{$randomLorem}}\",\n  \"rua\": \"{{$randomLorem}}\",\n  \"cep\": \"00000000\",\n  \"cidade\": \"{{$randomCity}}\",\n  \"estado\": \"São Paulo\",\n  \"pais\": \"{{$randomCountry}}\",\n  \"amenidades\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/localidades/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"localidades",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"rua\": \"<string>\",\n  \"cep\": \"<string>\",\n  \"cidade\": \"<string>\",\n  \"estado\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"amenidades\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/localidades/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"localidades",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"rua\": \"<string>\",\n  \"cep\": \"<string>\",\n  \"cidade\": \"<string>\",\n  \"estado\": \"<string>\",\n  \"pais\": \"<string>\",\n  \"amenidades\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "delete 4",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/localidades/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"localidades",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/localidades/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"localidades",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
 					]
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "itens",
+			"item": [
+				{
+					"name": "search 5",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/itens",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"itens"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/itens",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"itens"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"value\": \"<number>\",\n    \"quantidade\": \"<integer>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"localidade\": {\n      \"id\": \"<long>\",\n      \"nome\": \"<string>\",\n      \"descricao\": \"<string>\",\n      \"rua\": \"<string>\",\n      \"cep\": \"<string>\",\n      \"cidade\": \"<string>\",\n      \"estado\": \"<string>\",\n      \"pais\": \"<string>\",\n      \"amenidades\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"value\": \"<number>\",\n    \"quantidade\": \"<integer>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create 5",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomProduct}}\",\n  \"descricao\": \"{{$randomProduct}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/itens",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"itens"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/itens",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"itens"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "read 5",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/itens/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"itens",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/itens/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"itens",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update 5",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomProduct}}\",\n  \"descricao\": \"{{$randomProduct}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/itens/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"itens",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/itens/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"itens",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"nome\": \"<string>\",\n  \"descricao\": \"<string>\",\n  \"localidade\": {\n    \"id\": \"<long>\",\n    \"nome\": \"<string>\",\n    \"descricao\": \"<string>\",\n    \"rua\": \"<string>\",\n    \"cep\": \"<string>\",\n    \"cidade\": \"<string>\",\n    \"estado\": \"<string>\",\n    \"pais\": \"<string>\",\n    \"amenidades\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"value\": \"<number>\",\n  \"quantidade\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete 5",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/itens/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"itens",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/itens/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"itens",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/booking-service"
 		}
 	]
 }
