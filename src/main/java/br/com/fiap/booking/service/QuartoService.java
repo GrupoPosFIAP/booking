@@ -24,7 +24,7 @@ public class QuartoService {
     @Transactional
     public Quarto cadastrarQuarto(QuartoDto quartoDto) {
         Predio predio = this.predioRepository.findById(quartoDto.getIdPredio())
-                .orElseThrow(() -> new EntityNotFoundException("Localidade não encontrada."));
+                .orElseThrow(() -> new EntityNotFoundException("Quarto não encontrado."));
         return this.quartoRepository.save(quartoDto.toEntity(predio));
     }
 
