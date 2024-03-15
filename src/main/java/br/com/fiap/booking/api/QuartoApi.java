@@ -1,0 +1,34 @@
+package br.com.fiap.booking.api;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.com.fiap.booking.dto.QuartoDto;
+
+@RequestMapping("/quartos")
+public interface QuartoApi {
+
+    @PostMapping
+    ResponseEntity<QuartoDto> create(@RequestBody QuartoDto dto);
+    
+    @GetMapping("/{id}")
+    ResponseEntity<QuartoDto> read(@PathVariable("id") Long id);
+
+    @PutMapping("/{id}")
+    ResponseEntity<QuartoDto> update(@RequestBody QuartoDto dto, @PathVariable("id") Long id);
+
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> delete(@PathVariable("id") Long id);
+
+    @GetMapping
+    ResponseEntity<List<QuartoDto>> search(@PathVariable("search") String... params);
+
+}

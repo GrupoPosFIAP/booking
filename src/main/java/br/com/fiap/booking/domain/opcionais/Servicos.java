@@ -1,16 +1,18 @@
 package br.com.fiap.booking.domain.opcionais;
 
+import java.math.BigDecimal;
+
 import br.com.fiap.booking.domain.BaseEntity;
 import br.com.fiap.booking.domain.Localidade;
 import br.com.fiap.booking.domain.Produto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
-
-import java.math.BigDecimal;
+import lombok.EqualsAndHashCode;
 
 @Data
 @Entity
+@EqualsAndHashCode(callSuper = true)
 public class Servicos extends BaseEntity implements Produto {
 
     @ManyToOne
