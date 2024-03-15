@@ -26,6 +26,13 @@
 							],
 							"path": [
 								"servicos"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Modesto69",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -80,7 +87,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremSentence}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\",\n    \"nome\": \"{{$randomUserName}}\",\n    \"descricao\": \"{{$randomUserName}}\",\n    \"rua\": \"{{$randomUserName}}\",\n    \"cep\": \"{{$randomZipCode}}\",\n    \"cidade\": \"{{$randomCity}}\",\n    \"estado\": \"{{$randomUserName}}\",\n    \"pais\": \"{{$randomCountry}}\",\n    \"amenidades\": [\n      \"{{$randomLoremSentence}}\",\n      \"{{$randomLoremSentence}}\"\n    ]\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
+							"raw": "{\n  \n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremSentence}}\",\n  \"localidade\": {\n    \"id\": 1\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -232,7 +239,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremSentence}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\",\n    \"nome\": \"{{$randomUserName}}\",\n    \"descricao\": \"{{$randomUserName}}\",\n    \"rua\": \"{{$randomUserName}}\",\n    \"cep\": \"{{$randomZipCode}}\",\n    \"cidade\": \"{{$randomCityName}}\",\n    \"estado\": \"{{$randomUserName}}\",\n    \"pais\": \"{{$randomCountry}}\",\n    \"amenidades\": [\n      \"{{$randomLoremSentence}}\",\n      \"{{$randomLoremSentence}}\"\n    ]\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
+							"raw": "{\n  \n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremSentence}}\",\n  \"localidade\": {\n    \"id\": 1\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -330,7 +337,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "<long>",
+									"value": "4",
 									"description": "(Required) "
 								}
 							]
@@ -443,7 +450,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"quarto\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"inicioReserva\": \"2024-03-13\",\n  \"fimReserva\": \"2024-03-20\"\n}",
+							"raw": "{\n  \"quarto\": {\n    \"id\": 1\n  },\n  \"inicioReserva\": \"2024-03-13\",\n  \"fimReserva\": \"2024-03-20T12:00:00\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -532,7 +539,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "<long>",
+									"value": "1",
 									"description": "(Required) "
 								}
 							]
@@ -595,7 +602,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"quarto\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"inicioReserva\": \"2024-03-13\",\n  \"fimReserva\": \"2024-03-20\"\n}",
+							"raw": "{\n  \"quarto\": {\n    \"id\": 1\n  },\n  \"inicioReserva\": \"2024-03-13\",\n  \"fimReserva\": \"2024-03-20\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -806,7 +813,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"predio\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"numero\": \"{{$randomInt}}\",\n  \"tipo\": \"{{$randomLorem}}\",\n  \"totalPessoas\": \"{{$randomInt}}\",\n  \"quantidadeCamas\": \"{{$randomInt}}\",\n  \"moveis\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ],\n  \"value\": \"<number>\",\n  \"quantidadeBanheiros\": \"{{$randomInt}}\",\n  \"quantidadeQuartos\": \"{{$randomInt}}\"\n}",
+							"raw": "{\n  \"nome\": \"{{$randomName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"predio\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"numero\": \"{{$randomInt}}\",\n  \"tipo\": \"{{$randomLorem}}\",\n  \"totalPessoas\": \"{{$randomInt}}\",\n  \"quantidadeCamas\": \"{{$randomInt}}\",\n  \"moveis\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ],\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidadeBanheiros\": \"{{$randomInt}}\",\n  \"quantidadeQuartos\": \"{{$randomInt}}\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -958,7 +965,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"predio\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"numero\": \"{{$randomInt}}\",\n  \"tipo\": \"{{$randomLorem}}\",\n  \"totalPessoas\": \"{{$randomInt}}\",\n  \"quantidadeCamas\": \"{{$randomInt}}\",\n  \"moveis\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ],\n  \"value\": \"<number>\",\n  \"quantidadeBanheiros\": \"{{$randomInt}}\",\n  \"quantidadeQuartos\": \"{{$randomInt}}\"\n}",
+							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"predio\": {\n    \"id\": 1\n  },\n  \"numero\": \"{{$randomInt}}\",\n  \"tipo\": \"{{$randomLorem}}\",\n  \"totalPessoas\": \"{{$randomInt}}\",\n  \"quantidadeCamas\": \"{{$randomInt}}\",\n  \"moveis\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ],\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidadeBanheiros\": \"{{$randomInt}}\",\n  \"quantidadeQuartos\": \"{{$randomInt}}\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -1169,7 +1176,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\"\n  }\n}",
+							"raw": "{\n  \n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"localidade\": {\n    \"id\": 1\n  }\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -1321,7 +1328,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\"\n  }\n}",
+							"raw": "{\n  \n  \"nome\": \"{{$randomUserName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"localidade\": {\n    \"id\": 1\n  }\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -1472,12 +1479,18 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/localidades",
+							"raw": "{{baseUrl}}/localidades?cidade=South Felixberg",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"localidades"
+							],
+							"query": [
+								{
+									"key": "cidade",
+									"value": "South Felixberg"
+								}
 							]
 						}
 					},
@@ -1532,7 +1545,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomLorem}}\",\n  \"descricao\": \"{{$randomLorem}}\",\n  \"rua\": \"{{$randomLorem}}\",\n  \"cep\": \"00000000\",\n  \"cidade\": \"{{$randomCity}}\",\n  \"estado\": \"São Paulo\",\n  \"pais\": \"{{$randomCountry}}\",\n  \"amenidades\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ]\n}",
+							"raw": "{\n  \n  \"nome\": \"{{$randomLoremWords}}\",\n  \"descricao\": \"{{$randomLoremWords}}\",\n  \"rua\": \"{{$randomLoremWords}}\",\n  \"cep\": \"00000000\",\n  \"cidade\": \"{{$randomCity}}\",\n  \"estado\": \"São Paulo\",\n  \"pais\": \"{{$randomCountry}}\",\n  \"amenidades\": [\n    \"{{$randomLoremWords}}\",\n    \"{{$randomLoremWords}}\"\n  ]\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -1684,7 +1697,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomLorem}}\",\n  \"descricao\": \"{{$randomLorem}}\",\n  \"rua\": \"{{$randomLorem}}\",\n  \"cep\": \"00000000\",\n  \"cidade\": \"{{$randomCity}}\",\n  \"estado\": \"São Paulo\",\n  \"pais\": \"{{$randomCountry}}\",\n  \"amenidades\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ]\n}",
+							"raw": "{\n  \n  \"nome\": \"{{$randomLorem}}\",\n  \"descricao\": \"{{$randomLorem}}\",\n  \"rua\": \"{{$randomLorem}}\",\n  \"cep\": \"00000000\",\n  \"cidade\": \"{{$randomCity}}\",\n  \"estado\": \"São Paulo\",\n  \"pais\": \"{{$randomCountry}}\",\n  \"amenidades\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ]\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -1841,6 +1854,13 @@
 							],
 							"path": [
 								"itens"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Chips",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -1895,7 +1915,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomProduct}}\",\n  \"descricao\": \"{{$randomProduct}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
+							"raw": "{\n  \n  \"nome\": \"{{$randomProduct}}\",\n  \"descricao\": \"{{$randomProduct}}\",\n  \"localidade\": {\n    \"id\": 1\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -2047,7 +2067,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{$randomInt}}\",\n  \"nome\": \"{{$randomProduct}}\",\n  \"descricao\": \"{{$randomProduct}}\",\n  \"localidade\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
+							"raw": "{\n  \n  \"nome\": \"{{$randomProduct}}\",\n  \"descricao\": \"{{$randomProduct}}\",\n  \"localidade\": {\n    \"id\": 1\n  },\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidade\": \"{{$randomInt}}\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",

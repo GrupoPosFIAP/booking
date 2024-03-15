@@ -30,7 +30,6 @@ import br.com.fiap.booking.mapper.ServicoMapper;
 import br.com.fiap.booking.repository.ServicoRepository;
 import br.com.fiap.booking.service.ServicoCrudService;
 
-
 @ContextConfiguration(classes = {
         ServicoCrudController.class,
         ServicoCrudService.class,
@@ -53,64 +52,64 @@ public class ServicoCrudControllerTest extends BaseCrudControllerTest {
     void testCreate() throws Exception {
 
         when(repository.save(any()))
-            .thenAnswer(AdditionalAnswers.returnsFirstArg());
+                .thenAnswer(AdditionalAnswers.returnsFirstArg());
 
         mockMvc
-            .perform(
-                post("/servicos")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .accept(MediaType.APPLICATION_JSON)
-                    .content(request))
-            .andExpect(status().isOk());
+                .perform(
+                        post("/servicos")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .accept(MediaType.APPLICATION_JSON)
+                                .content(request))
+                .andExpect(status().isOk());
     }
 
     @Test
     void testRead() throws Exception {
 
         doReturn(Optional.of(new Servico()))
-            .when(repository).findById(any());
-        
+                .when(repository).findById(any());
+
         mockMvc
-            .perform(
-                get("/servicos/{id}", 1)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .accept(MediaType.APPLICATION_JSON))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$").exists());
+                .perform(
+                        get("/servicos/{id}", 1)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").exists());
     }
 
     @Test
     void testUpdate() throws Exception {
 
         doReturn(Optional.of(new Servico()))
-            .when(repository).findById(any());
+                .when(repository).findById(any());
 
         doReturn(new Servico())
-            .when(repository).save(any());
+                .when(repository).save(any());
 
         mockMvc
-            .perform(
-                put("/servicos/{id}", 1)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .accept(MediaType.APPLICATION_JSON)
-                    .content(request))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$").exists());
+                .perform(
+                        put("/servicos/{id}", 1)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .accept(MediaType.APPLICATION_JSON)
+                                .content(request))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").exists());
     }
 
     @Test
     void testDelete() throws Exception {
         doReturn(Optional.of(new Servico()))
-                    .when(repository).findById(any());
-        
+                .when(repository).findById(any());
+
         doNothing()
-            .when(repository).deleteById(any());
+                .when(repository).deleteById(any());
         mockMvc
-            .perform(
-                delete("/servicos/{id}", 1)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .accept(MediaType.APPLICATION_JSON))
-            .andExpect(status().isOk());
+                .perform(
+                        delete("/servicos/{id}", 1)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
 
     }
 
@@ -118,22 +117,20 @@ public class ServicoCrudControllerTest extends BaseCrudControllerTest {
     void testSearch() throws Exception {
 
         var servicos = List.of(
-            Servico.builder().nome("Massagem Corporal").build(),
-            Servico.builder().nome("Massagem muito doida").build(),
-            Servico.builder().nome("Massagem Você sabe bem né!").build()
-        );
+                Servico.builder().nome("Massagem Corporal").build(),
+                Servico.builder().nome("Massagem muito doida").build(),
+                Servico.builder().nome("Massagem Você sabe bem né!").build());
 
         doReturn(servicos)
-            .when(repository).findAll(any(ServicoSpecification.class));
+                .when(repository).findAll(any(ServicoSpecification.class));
 
         mockMvc
-            .perform(
-                get("/servicos")
-                .param("nome", "massagem")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .accept(MediaType.APPLICATION_JSON))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$", hasSize(3)));
+                .perform(
+                        get("/servicos?nome=massagem")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(3)));
 
     }
 }

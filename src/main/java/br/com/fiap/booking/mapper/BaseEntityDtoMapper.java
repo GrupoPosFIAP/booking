@@ -16,6 +16,8 @@ public class BaseEntityDtoMapper implements BaseMapper<BaseEntity, BaseDto> {
 
     @PostConstruct
     public void createMappings() {
+
+        mapper.getConfiguration().setSkipNullEnabled(true);
         mapper
             .typeMap(BaseEntity.class, BaseDto.class)
             .addMapping(BaseEntity::getId, BaseDto::setId)
