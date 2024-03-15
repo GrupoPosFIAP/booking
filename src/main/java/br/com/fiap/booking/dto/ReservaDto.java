@@ -1,6 +1,7 @@
 package br.com.fiap.booking.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +17,10 @@ import lombok.experimental.SuperBuilder;
 public class ReservaDto extends BaseDto {
 
     private QuartoDto quarto;
-    private LocalDateTime inicioReserva;
-    private LocalDateTime fimReserva;
+    private LocalDateTime dataInicial;
+    private LocalDateTime dataFinal;
+    private List<ItemDto> itens;
+    private List<ServicoDto> servicos;
+    private UsuarioDto cliente;
+    private Integer totalPessoas;
 }

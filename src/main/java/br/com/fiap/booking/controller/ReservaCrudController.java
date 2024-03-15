@@ -29,6 +29,15 @@ public class ReservaCrudController
         super(service, mapper);
     }
 
+    @PostMapping("/cadastrar")
+    public ResponseEntity<ReservaDto> cadastrar(@RequestBody ReservaDto dto) {
+        var response = ((ReservaCrudService) getCrudService()).cadastrarReserva(dto);
+
+        var responseDto = ((ReservaMapper) getMapper()).toDto(response);
+
+        return ResponseEntity.ok(responseDto);
+    }
+
     @PostMapping
     public ResponseEntity<ReservaDto> create(@RequestBody ReservaDto dto) {
         return super.create(dto);

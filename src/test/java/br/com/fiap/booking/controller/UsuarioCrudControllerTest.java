@@ -24,41 +24,28 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 
-import br.com.fiap.booking.controller.specifications.ReservaSpecification;
-import br.com.fiap.booking.domain.Quarto;
-import br.com.fiap.booking.domain.Reserva;
-import br.com.fiap.booking.mapper.ReservaMapper;
-import br.com.fiap.booking.repository.QuartoRepository;
-import br.com.fiap.booking.repository.ReservaRepository;
-import br.com.fiap.booking.service.EmailService;
-import br.com.fiap.booking.service.ReservaCrudService;
+import br.com.fiap.booking.controller.specifications.UsuarioSpecification;
+import br.com.fiap.booking.domain.Usuario;
+import br.com.fiap.booking.mapper.UsuarioMapper;
+import br.com.fiap.booking.repository.UsuarioRepository;
+import br.com.fiap.booking.service.UsuarioCrudService;
 
 @ContextConfiguration(classes = {
-        ReservaCrudController.class,
-        ReservaCrudService.class,
-        ReservaMapper.class,
+        UsuarioCrudController.class,
+        UsuarioCrudService.class,
+        UsuarioMapper.class,
         ModelMapper.class
 })
-public class ReservaCrudControllerTest extends BaseCrudControllerTest {
+public class UsuarioCrudControllerTest extends BaseCrudControllerTest {
 
     @MockBean
-    private ReservaRepository repository;
-
-    @MockBean
-    private QuartoRepository quartoRepository;
-
-    @MockBean
-    private EmailService emailService;
+    private UsuarioRepository repository;
 
     private String request;
 
     @BeforeEach
     void initTests() throws IOException {
-        request = getJsonContent("reserva_request.json");
-        when(quartoRepository.findById(any()))
-                .thenReturn(Optional.of(new Quarto()));
-
-        doNothing().when(emailService).sendMail(any());
+        request = getJsonContent("usuario_request.json");
     }
 
     @Test
@@ -69,7 +56,7 @@ public class ReservaCrudControllerTest extends BaseCrudControllerTest {
 
         mockMvc
                 .perform(
-                        post("/reservas")
+                        post("/usuarios")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .accept(MediaType.APPLICATION_JSON)
                                 .content(request))
@@ -79,12 +66,12 @@ public class ReservaCrudControllerTest extends BaseCrudControllerTest {
     @Test
     void testRead() throws Exception {
 
-        doReturn(Optional.of(new Reserva()))
+        doReturn(Optional.of(new Usuario()))
                 .when(repository).findById(any());
 
         mockMvc
                 .perform(
-                        get("/reservas/{id}", 1)
+                        get("/usuarios/{id}", 1)
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -94,15 +81,15 @@ public class ReservaCrudControllerTest extends BaseCrudControllerTest {
     @Test
     void testUpdate() throws Exception {
 
-        doReturn(Optional.of(new Reserva()))
+        doReturn(Optional.of(new Usuario()))
                 .when(repository).findById(any());
 
-        doReturn(new Reserva())
+        doReturn(new Usuario())
                 .when(repository).save(any());
 
         mockMvc
                 .perform(
-                        put("/reservas/{id}", 1)
+                        put("/usuarios/{id}", 1)
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .accept(MediaType.APPLICATION_JSON)
                                 .content(request))
@@ -112,14 +99,14 @@ public class ReservaCrudControllerTest extends BaseCrudControllerTest {
 
     @Test
     void testDelete() throws Exception {
-        doReturn(Optional.of(new Reserva()))
+        doReturn(Optional.of(new Usuario()))
                 .when(repository).findById(any());
 
         doNothing()
                 .when(repository).deleteById(any());
         mockMvc
                 .perform(
-                        delete("/reservas/{id}", 1)
+                        delete("/usuarios/{id}", 1)
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
@@ -129,17 +116,17 @@ public class ReservaCrudControllerTest extends BaseCrudControllerTest {
     @Test
     void testSearch() throws Exception {
 
-        var reservas = List.of(
-                Reserva.builder().nome("Reserva 1 ").build(),
-                Reserva.builder().nome("Reserva 2").build(),
-                Reserva.builder().nome("Reserva 3").build());
+        var usuarios = List.of(
+                Usuario.builder().nome("Usuario 1").build(),
+                Usuario.builder().nome("Usuario 2").build(),
+                Usuario.builder().nome("Usuario 3").build());
 
-        doReturn(reservas)
-                .when(repository).findAll(any(ReservaSpecification.class));
+        doReturn(usuarios)
+                .when(repository).findAll(any(UsuarioSpecification.class));
 
         mockMvc
                 .perform(
-                        get("/reservas?nome=Reserva")
+                        get("/usuarios?nome=usuario")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())

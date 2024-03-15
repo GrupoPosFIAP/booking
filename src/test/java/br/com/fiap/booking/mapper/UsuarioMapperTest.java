@@ -2,24 +2,24 @@ package br.com.fiap.booking.mapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 
-import br.com.fiap.booking.domain.Reserva;
-import br.com.fiap.booking.dto.ReservaDto;
+import br.com.fiap.booking.domain.Usuario;
+import br.com.fiap.booking.dto.UsuarioDto;
 
-public class ReservaMapperTest {
+public class UsuarioMapperTest {
 
     private static final ModelMapper MODEL_MAPPER = new ModelMapper();
 
-    private ReservaMapper mapper;
+    private UsuarioMapper mapper;
 
     @BeforeEach
     void initTests() {
-        mapper = new ReservaMapper(MODEL_MAPPER);
+        mapper = new UsuarioMapper(MODEL_MAPPER);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class ReservaMapperTest {
 
     @Test
     void mappingTest() {
-        var newEntity = new Reserva();
+        var newEntity = new Usuario();
         var entity = getEntity();
 
         mapper.mapping(entity, newEntity);
@@ -48,27 +48,27 @@ public class ReservaMapperTest {
         assertEquals(entity.getDescricao(), newEntity.getDescricao());
     }
 
-    private Reserva getEntity() {
-        return Reserva
+    private Usuario getEntity() {
+        return Usuario
             .builder()
             .descricao("descricao")
             .nome("nome")
             .id(1L)
-            .dataInicial(LocalDateTime.now())
-            .dataFinal(LocalDateTime.now())
-            .quarto(null)
+            .cpf("00000000000")
+            .dataNascimento(LocalDate.MIN)
+            .email("email@test.com")
             .build();
     }
 
-    private ReservaDto getDto() {
-        return ReservaDto
+    private UsuarioDto getDto() {
+        return UsuarioDto
             .builder()
             .descricao("descricao")
             .nome("nome")
             .id(1L)
-            .dataInicial(LocalDateTime.now())
-            .dataFinal(LocalDateTime.now())
-            .quarto(null)
+            .cpf("00000000000")
+            .dataNascimento(LocalDate.MIN)
+            .email("email@test.com")
             .build();
     }
 }

@@ -9,9 +9,11 @@ import br.com.fiap.booking.exception.DataNotFoundException;
 import br.com.fiap.booking.mapper.BaseMapper;
 import br.com.fiap.booking.repository.BaseRepository;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+@Getter
 @AllArgsConstructor
 public abstract class BaseCrudService<E extends BaseEntity> {
 

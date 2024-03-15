@@ -11,7 +11,9 @@ import br.com.fiap.booking.domain.BaseEntity;
 import br.com.fiap.booking.mapper.BaseMapper;
 import br.com.fiap.booking.service.BaseCrudService;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
 @AllArgsConstructor
 public abstract class BaseCrudController<E extends BaseEntity, DTO> {
 
