@@ -34,6 +34,7 @@ public class Reserva extends BaseEntity {
     private List<Item> itens;
     @OneToMany
     private List<Servico> servicos;
+    @ManyToOne
     private Usuario cliente;
     private Integer totalPessoas;
 }

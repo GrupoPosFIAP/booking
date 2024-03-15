@@ -17,7 +17,7 @@ public class EmailService {
     public void sendMail(Reserva reserva) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom("emersonpradoo61@gmail.com");
-        mailMessage.setTo("lucasmacedo9@hotmail.com", "kesaraujo@gmail.com","emersonpradoo@hotmail.com");
+        mailMessage.setTo("lucasmacedo9@hotmail.com", "kesaraujo@gmail.com","emersonpradoo@hotmail.com", "fabio__tche@hotmail.com");
         mailMessage.setSubject("Reserva efetuada com sucesso!");
         mailMessage.setText("Sua reserva de número "+ reserva.getId()+ " foi realizada com sucesso!");
         mailSender.send(mailMessage);
