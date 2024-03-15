@@ -1,0 +1,9 @@
+{
+    "nome": "nome",
+    "descricao": "descricao",
+    "localidade": {
+        "id": 1
+    },
+    "value": "500.00",
+    "quantidade": 1
+}

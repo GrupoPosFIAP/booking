@@ -1,0 +1,9 @@
+{
+    "nome": "nome",
+    "descricao": "descricao",
+    "quarto": {
+        "id": 1
+    },
+    "inicioReserva": "2024-03-13T12:00:00",
+    "fimReserva": "2024-03-20T12:00:00"
+}

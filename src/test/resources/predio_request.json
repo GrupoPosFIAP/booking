@@ -1,0 +1,7 @@
+{
+    "nome": "Predio",
+    "descricao": "Um Predio",
+    "localidade": {
+        "id": 1
+    }
+}

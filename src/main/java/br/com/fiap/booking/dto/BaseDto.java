@@ -1,15 +1,17 @@
 package br.com.fiap.booking.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-@Data
+@Getter
+@Setter
 @SuperBuilder
-@AllArgsConstructor
 @NoArgsConstructor
-public class BaseDto {
+@AllArgsConstructor
+public abstract class BaseDto {
 
     private Long id;
     private String nome;

@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReservaDto {
+public class ReservaDto extends BaseDto {
 
     private QuartoDto quarto;
     private LocalDateTime inicioReserva;

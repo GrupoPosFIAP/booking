@@ -1,0 +1,18 @@
+{
+    "nome": "Nome",
+    "descricao": "Descricao",
+    "predio": {
+        "id": 1
+    },
+    "numero": 1,
+    "tipo": "descricao",
+    "totalPessoas": 1,
+    "quantidadeCamas": 1,
+    "moveis": [
+        "descricao 1",
+        "descricao 2"
+    ],
+    "value": "500.00",
+    "quantidadeBanheiros": 1,
+    "quantidadeQuartos": 1
+}

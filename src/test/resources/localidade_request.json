@@ -1,0 +1,13 @@
+{
+    "nome": "test",
+    "descricao": "test",
+    "rua": "test",
+    "cep": "00000000",
+    "cidade": "São Paulo",
+    "estado": "São Paulo",
+    "pais": "Brasil",
+    "amenidades": [
+        "test",
+        "test"
+    ]
+}
