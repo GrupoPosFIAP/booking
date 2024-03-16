@@ -1,14 +1,13 @@
-
 services:
 
-#  booking:
-  ##    image: pradoo159/booking-service:1.0.0-SNAPSHOT
-  ##    ports:
-  ##      - "8080:8080"
-  ##    depends_on:
-  ##      - postgres
-  ##    networks:
-  ##      - hackanet
+  booking:
+    image: pradoo159/booking-service:1.0.0-SNAPSHOT
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - hackanet
 
   postgres:
     image: postgres
@@ -23,4 +22,4 @@ services:
 
 networks:
   hackanet:
-    driver: bridge
+    driver: bridge
