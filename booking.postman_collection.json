@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6fdbb2d3-5ace-4164-8d29-13e45e2b65d5",
+		"_postman_id": "db8e2e8b-a38b-4ce7-b9a6-c777196008bd",
 		"name": "booking",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "2952380"
+		"_exporter_id": "33650090"
 	},
 	"item": [
 		{
@@ -381,6 +381,9 @@
 			"item": [
 				{
 					"name": "search 1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -389,13 +392,36 @@
 								"value": "*/*"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseUrl}}/reservas",
+							"raw": "{{baseUrl}}/reserva?dataInicial=2024-03-16&dataFinal=2024-03-20&totalPessoas=2",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"reservas"
+								"reserva"
+							],
+							"query": [
+								{
+									"key": "dataInicial",
+									"value": "2024-03-16"
+								},
+								{
+									"key": "dataFinal",
+									"value": "2024-03-20"
+								},
+								{
+									"key": "totalPessoas",
+									"value": "2"
+								}
 							]
 						}
 					},
@@ -450,7 +476,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"quarto\": {\n    \"id\": 1\n  },\n  \"inicioReserva\": \"2024-03-13\",\n  \"fimReserva\": \"2024-03-20T12:00:00\"\n}",
+							"raw": "{\n  \"idQuarto\": 2,\n  \"idItem\": [\n    1\n  ],\n  \"idServico\": [\n    1\n  ],\n  \"idCliente\": 1,\n  \"dataInicial\": \"2024-03-16\",\n  \"dataFinal\": \"2024-03-16\",\n  \"totalPessoas\": 1\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -459,12 +485,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/reservas",
+							"raw": "{{baseUrl}}/reserva",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"reservas"
+								"reserva"
 							]
 						}
 					},
@@ -528,12 +554,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/reservas/:id",
+							"raw": "{{baseUrl}}/reserva/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"reservas",
+								"reserva",
 								":id"
 							],
 							"variable": [
@@ -611,12 +637,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/reservas/:id",
+							"raw": "{{baseUrl}}/reserva/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"reservas",
+								"reserva",
 								":id"
 							],
 							"variable": [
@@ -689,12 +715,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/reservas/:id",
+							"raw": "{{baseUrl}}/reserva/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"reservas",
+								"reserva",
 								":id"
 							],
 							"variable": [
@@ -813,7 +839,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nome\": \"{{$randomName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"predio\": {\n    \"id\": \"{{$randomInt}}\"\n  },\n  \"numero\": \"{{$randomInt}}\",\n  \"tipo\": \"{{$randomLorem}}\",\n  \"totalPessoas\": \"{{$randomInt}}\",\n  \"quantidadeCamas\": \"{{$randomInt}}\",\n  \"moveis\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ],\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidadeBanheiros\": \"{{$randomInt}}\",\n  \"quantidadeQuartos\": \"{{$randomInt}}\"\n}",
+							"raw": "{\n  \"nome\": \"{{$randomName}}\",\n  \"descricao\": \"{{$randomLoremIpsum}}\",\n  \"predio\": {\n    \"id\": 1\n  },\n  \"numero\": \"{{$randomInt}}\",\n  \"tipo\": \"{{$randomLorem}}\",\n  \"totalPessoas\": \"{{$randomInt}}\",\n  \"quantidadeCamas\": \"{{$randomInt}}\",\n  \"moveis\": [\n    \"{{$randomLorem}}\",\n    \"{{$randomLorem}}\"\n  ],\n  \"value\": \"{{$randomPrice}}\",\n  \"quantidadeBanheiros\": \"{{$randomInt}}\",\n  \"quantidadeQuartos\": \"{{$randomInt}}\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
