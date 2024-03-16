@@ -22,4 +22,4 @@ services:
 
 networks:
   hackanet:
-    driver: bridge
+    driver: bridge
