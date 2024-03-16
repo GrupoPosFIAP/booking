@@ -38,10 +38,6 @@ as regras de negócios específicas para cada fluxo.
 ```
 
 
-## Arquitetura
-<img  width="100%" height="100%"  src="src/arquitetura.jpg"  alt="Arquitetura"  title="Arquitetura"  />
-
-
 ## Endpoints
 * [Quartos](#quartos)
 * [Serviços e Opcionais](#servicos e opcionais)
@@ -120,20 +116,20 @@ Essa rota faz alteração no servicos.
 Essa rota apaga o servicos.
 
 
-## Cliente
+## Usuario
 
 * Descrição dos Campos
 
 Campo   | Descrição
 --------- | ------
-nome | O nome da cliente. Deve ser uma string.
-paisOrigem  | País de origem do cliente. Deve ser uma string.
-cpf | O número do CPF do cliente. Deve ser uma string.
-passaporte | Número do passaporte do cliente. Deve ser uma string.
+nome | O nome do usuário. Deve ser uma string.
+paisOrigem  | País de origem do usuário. Deve ser uma string.
+cpf | O número do CPF do usuário. Deve ser uma string.
+passaporte | Número do passaporte do usuário. Deve ser uma string.
 dataDeNascimento | Data de nascimento. Deve ser uma data válida.
-enderecoPaisOrigem | Endereço do cliente. Deve ser uma string.
-telefone | Telefone do cliente. Deve ser uma string.
-email | E-mail válido do cliente. Deve ser uma string.
+enderecoPaisOrigem | Endereço do usuário. Deve ser uma string.
+telefone | Telefone do usuário. Deve ser uma string.
+email | E-mail válido do usuário. Deve ser uma string.
 
 
 * Rota POST http://localhost:8080/clientes
@@ -196,11 +192,8 @@ Essa rota apaga a reserva.
 
 ## Dificuldades e Aprendizados
 ```
-RETIRAR* A não padronização dos ambientes da equipe gerou falhas no build do projeto.
 * O grupo não alinhou a finalização dos módulos da pós-graduação para liberar tempo adequado para o
 desenvolvimento do projeto.
 * Horários de reunião do grupo divergiu entre alguns participantes.
 * Certa dificuldade no entendimento do enunciado do projeto. Exemplo: O relacionamento de algumas entidades.
-RETIRAR* A utilização de IDE (Integrated Developer Envoirement – Ambiente de Desenvolvimento Integrado) idênticas
-por parte dos membros da equipe, evita problemas de incompatibilidade.
 ```
