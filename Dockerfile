@@ -1,3 +1,7 @@
 FROM openjdk:17-jdk-alpine
-COPY target/booking-service-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+MAINTAINER pradoo159
+ARG DATABASE_HOST
+ENV database_host $DATABASE_HOST
+COPY target/booking-service-1.0.0-SNAPSHOT.jar booking-service.jar
+ENTRYPOINT ["java","-jar","booking-service.jar"]
+

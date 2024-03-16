@@ -1,9 +1,5 @@
 package br.com.fiap.booking.service;
 
-import java.util.List;
-
-import org.springframework.data.jpa.domain.Specification;
-
 import br.com.fiap.booking.domain.BaseEntity;
 import br.com.fiap.booking.exception.DataNotFoundException;
 import br.com.fiap.booking.mapper.BaseMapper;
@@ -11,10 +7,13 @@ import br.com.fiap.booking.repository.BaseRepository;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.domain.Specification;
+
+import java.util.List;
 
 @Slf4j
 @Getter
-@AllArgsConstructor
+ @AllArgsConstructor
 public abstract class BaseCrudService<E extends BaseEntity> {
 
     private final BaseRepository<E> repository;

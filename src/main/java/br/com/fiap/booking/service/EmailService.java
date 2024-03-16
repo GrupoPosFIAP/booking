@@ -1,11 +1,10 @@
 package br.com.fiap.booking.service;
 
+import br.com.fiap.booking.domain.reservas.Reserva;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-
-import br.com.fiap.booking.domain.Reserva;
 
 @Service
 public class EmailService {

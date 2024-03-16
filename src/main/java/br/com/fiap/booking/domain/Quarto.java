@@ -1,8 +1,5 @@
 package br.com.fiap.booking.domain;
 
-import java.math.BigDecimal;
-import java.util.List;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -12,6 +9,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 
 @Entity

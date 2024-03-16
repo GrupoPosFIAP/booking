@@ -1,13 +1,14 @@
 package br.com.fiap.booking.domain;
 
-import java.util.List;
-
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,5 +22,6 @@ public class Localidade extends BaseEntity {
     private String cidade;
     private String estado;
     private String pais;
+    @ElementCollection
     private List<String> amenidades;
 }

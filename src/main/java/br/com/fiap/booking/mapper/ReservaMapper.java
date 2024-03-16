@@ -1,9 +1,9 @@
 package br.com.fiap.booking.mapper;
 
+import br.com.fiap.booking.domain.reservas.Reserva;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import br.com.fiap.booking.domain.Reserva;
 import br.com.fiap.booking.dto.ReservaDto;
 import lombok.AllArgsConstructor;
 
